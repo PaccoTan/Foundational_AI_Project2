@@ -18,7 +18,7 @@ class RNN(nn.Module):
     def __init__(self, input_size, hidden_size, num_layers,nonlinearity="tanh",vocab_size=10000, *args, **kwargs):
         super(RNN, self).__init__()
         self.rnn = torch.nn.RNN(input_size,hidden_size,num_layers,nonlinearity,batch_first=True)
-        self.embedding = torch.nn.Embedding(num_embeddings=vocab_size,embedding_dim=input_size)
+        self.embedding = torch.nn.Embedding(num_embeddings=vocab_size+1,embedding_dim=input_size,padding_idx=vocab_size-1)
         self.linear = torch.nn.Linear(hidden_size,vocab_size)
 
     def forward(self,x):
