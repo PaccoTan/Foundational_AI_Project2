@@ -4,7 +4,6 @@ import json
 with open('data/train.jsonl') as f:
     data = [json.loads(line) for line in f]
 
-print(data[0])
 with open("data/train.txt","w") as f:
     for d in data:
         f.write(d["prompt"] + " " + d["completion"] + "\n")
@@ -17,3 +16,4 @@ with open('data/train.jsonl') as f:
 
 ids = sp.encode_as_ids(data[0]["prompt"])
 print(ids)
+print(sp.decode_ids(ids))
