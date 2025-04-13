@@ -16,13 +16,13 @@ with open('data/train.jsonl') as f:
     data = [(sp.encode_as_ids(json_object["prompt"]),sp.encode_as_ids(json_object["completion"])) for json_object in data]
 
 epochs = 30
-batch_size = 20
+batch_size = 8
 idxs = torch.randperm(len(data))
 train_data = [data[idxs[i]] for i in range(math.ceil(len(data)*0.8))]
 val_data = [data[idxs[i]] for i in range(math.ceil(len(data)*0.8),len(data))]
 print(len(data),len(train_data),len(val_data))
 
-model = models.LSTM(128,128,4,vocab_size=10000,dropout=0.1)
+model = models.LSTM(128,256,4,vocab_size=10000,dropout=0.2)
 model.to(device)
 loss_func = torch.nn.CrossEntropyLoss(reduction='none')
 optimizer = torch.optim.AdamW(model.parameters(), lr=0.001)
@@ -64,4 +64,16 @@ for epoch in range(epochs):
             out = model(x)
             loss = ((loss_func(out.permute(0, -1, -2), y.long())) * mask).mean()
             val_total += loss.item()
+
+        prompt = sp.encode_as_ids("which do you prefer? dogs or cats?")
+        for i in range(50):
+            x = torch.Tensor(prompt).int().to(device)
+            x = model(x)
+            y = (x / 1).softmax(-1)
+            predicted_token = torch.multinomial(y[-1], 1).item()
+            if predicted_token == 2:
+                break
+            prompt.append(predicted_token)
+    print(sp.decode_ids(prompt))
+
     print("Epoch %d:\tTrain Loss: %.3f\tVal Loss: %.3f\tTime Taken: %.3f" % (epoch+1,total/math.ceil(len(train_data)/batch_size),val_total/math.ceil(len(val_data)/batch_size),time.time()-start))
