@@ -1,0 +1,1 @@
+{"input_size": 128, "hidden_size": 512, "num_layers": 6, "vocab_size": 10000, "dropout": 0.3}

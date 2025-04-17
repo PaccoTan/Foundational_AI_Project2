@@ -1,0 +1,33 @@
+epochs: 30
+batch_size: 32
+lr: 0.010000
+Epoch 1:	Train Loss: 6.698	Val Loss: 6.269	Time Taken: 64.634
+Epoch 2:	Train Loss: 6.091	Val Loss: 6.019	Time Taken: 66.096
+Epoch 3:	Train Loss: 5.944	Val Loss: 6.010	Time Taken: 65.589
+Epoch 4:	Train Loss: 6.222	Val Loss: 6.272	Time Taken: 65.195
+Epoch 5:	Train Loss: 6.199	Val Loss: 6.233	Time Taken: 65.243
+Epoch 6:	Train Loss: 6.176	Val Loss: 6.147	Time Taken: 65.223
+Epoch 7:	Train Loss: 6.080	Val Loss: 6.063	Time Taken: 65.259
+Epoch 8:	Train Loss: 6.035	Val Loss: 6.056	Time Taken: 65.453
+Epoch 9:	Train Loss: 5.962	Val Loss: 6.021	Time Taken: 65.327
+Epoch 10:	Train Loss: 5.920	Val Loss: 5.934	Time Taken: 65.252
+Epoch 11:	Train Loss: 5.888	Val Loss: 5.919	Time Taken: 65.420
+Epoch 12:	Train Loss: 5.845	Val Loss: 5.877	Time Taken: 65.472
+Epoch 13:	Train Loss: 5.842	Val Loss: 5.865	Time Taken: 65.475
+Epoch 14:	Train Loss: 5.788	Val Loss: 5.837	Time Taken: 65.457
+Epoch 15:	Train Loss: 5.752	Val Loss: 5.821	Time Taken: 65.517
+Epoch 16:	Train Loss: 5.727	Val Loss: 5.802	Time Taken: 65.586
+Epoch 17:	Train Loss: 5.699	Val Loss: 5.790	Time Taken: 65.592
+Epoch 18:	Train Loss: 5.678	Val Loss: 5.761	Time Taken: 65.731
+Epoch 19:	Train Loss: 5.657	Val Loss: 5.752	Time Taken: 65.938
+Epoch 20:	Train Loss: 5.635	Val Loss: 5.748	Time Taken: 65.618
+Epoch 21:	Train Loss: 5.622	Val Loss: 5.731	Time Taken: 65.647
+Epoch 22:	Train Loss: 5.609	Val Loss: 5.726	Time Taken: 65.328
+Epoch 23:	Train Loss: 5.592	Val Loss: 5.715	Time Taken: 65.587
+Epoch 24:	Train Loss: 5.583	Val Loss: 5.710	Time Taken: 65.427
+Epoch 25:	Train Loss: 5.571	Val Loss: 5.702	Time Taken: 65.333
+Epoch 26:	Train Loss: 5.560	Val Loss: 5.700	Time Taken: 65.405
+Epoch 27:	Train Loss: 5.552	Val Loss: 5.691	Time Taken: 65.274
+Epoch 28:	Train Loss: 5.541	Val Loss: 5.684	Time Taken: 65.246
+Epoch 29:	Train Loss: 5.534	Val Loss: 5.682	Time Taken: 65.315
+Epoch 30:	Train Loss: 5.526	Val Loss: 5.679	Time Taken: 65.441

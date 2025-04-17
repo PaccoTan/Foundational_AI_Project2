@@ -8,7 +8,8 @@ import json
 from torcheval.metrics import Perplexity, BLEUScore
 import models
 
-path = "models/rnn-2"
+path = "final_models/rnn-2"
+tokenizer_path = 'data/tokenizer.model'
 with open(path + "/params.json", 'r') as f:
     params = json.load(f)
 print(params)
@@ -22,10 +23,10 @@ elif "rnn" in path:
 else:
     print("model type has to be in path")
     exit()
-model.load_state_dict(torch.load(path + "/checkpoints/model30.pt"))
+model.load_state_dict(torch.load(path + "/model.pt"))
 model.to(device)
 sp = spm.SentencePieceProcessor()
-sp.load('data/tokenizer.model')
+sp.load(tokenizer_path)
 
 with open(path + "/config.txt", "r") as file:
     log = file.read()
